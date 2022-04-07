@@ -19,26 +19,13 @@
     <main>
         <div class="wrapper">
             <p>Select your favourite genre!</p>
-            <select name="genres" id="dropdown"></select>
+            <select name="movie" id="dropdown"></select>
         </div>
 
     </main>
 
     <footer>Data courtesy of <a href="https://www.themoviedb.org/documentation/api">The Movie Database</a></footer>
 
-    <script>
-        const url = new URL('https://api.themoviedb.org/3/trending/all/day');
-        const apiKey = '3a0641f8102192c59a0e2ba5b56c7347';
-
-        url.search = new URLSearchParams({
-            api_key: apiKey,
-            
-        });
-
-        fetch(url)
-        .then((response) => response.json())
-        .then((paintingData) => console.log(paintingData));
-    </script>
 
 
      <script src="script.js"></script>

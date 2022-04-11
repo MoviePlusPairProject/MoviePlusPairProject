@@ -1,0 +1,40 @@
+footer {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    h5 {
+        text-shadow: -1px -1px 0 #2b2b2b, 1px -1px 0 #2b2b2b, -1px 1px 0 #2b2b2b, 1px 1px 0 #2b2b2b;
+        font-size: 3rem;
+        &:hover {
+            text-shadow: 0 0 7px $text,
+            0 0 10px $text,
+            0 0 21px $text,
+            0 0 42px $glow,
+            0 0 82px $glow,
+            0 0 92px $glow,
+            0 0 102px $glow,
+            0 0 151px $glow;
+        }
+    }
+    p {
+        font-family: $bodyFont, sans-serif;
+    }
+    a {
+        color: $text;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+            text-shadow: 0 0 7px $text,
+            0 0 10px $text,
+            0 0 21px $text,
+            0 0 42px $glow,
+            0 0 82px $glow,
+            0 0 92px $glow,
+            0 0 102px $glow,
+            0 0 151px $glow;
+            outline: 0;
+        }
+    }
+}

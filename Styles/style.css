@@ -239,6 +239,12 @@ body {
   background: #2b2b2b;
 }
 
+.wrapper {
+  max-width: 1200px;
+  width: 85%;
+  margin: 0 auto;
+}
+
 html {
   font-size: 125%;
 }
@@ -252,7 +258,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+footer {
   font-family: "Baskervville", serif;
   background-color: #d6003d;
   color: #ebebeb;
@@ -260,17 +267,266 @@ h4 {
 
 h1 {
   text-shadow: -1px -1px 0 #2b2b2b, 1px -1px 0 #2b2b2b, -1px 1px 0 #2b2b2b, 1px 1px 0 #2b2b2b;
-  height: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 100px;
+  line-height: 70px;
   font-size: 2rem;
+  padding: 20px;
+  margin: 10px;
+}
+h1:hover {
+  text-shadow: 0 0 7px #ebebeb, 0 0 10px #ebebeb, 0 0 21px #ebebeb, 0 0 42px #f50248, 0 0 82px #f50248, 0 0 92px #f50248, 0 0 102px #f50248, 0 0 151px #f50248;
 }
 
 .clapperboard {
   color: #2b2b2b;
   text-shadow: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150px;
+  background-color: #d6003d;
+  color: #ebebeb;
+}
+
+form {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+form input {
+  width: 40%;
+  height: 30%;
+  background-color: #2b2b2b;
+  border: 2px solid #ebebeb;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-family: "Lato", sans-serif;
+  color: #ebebeb;
+  outline: 0;
+}
+form input::-webkit-input-placeholder {
+  color: #ebebeb;
+}
+form input::-moz-placeholder {
+  color: #ebebeb;
+}
+form input:-ms-input-placeholder {
+  color: #ebebeb;
+}
+form input::-ms-input-placeholder {
+  color: #ebebeb;
+}
+form input::placeholder {
+  color: #ebebeb;
+}
+form button {
+  background-color: #2b2b2b;
+  color: #ebebeb;
+  border: none;
+  position: absolute;
+  left: 63%;
+}
+form button:hover, form button:focus {
+  outline: 0;
+  text-shadow: 0 0 7px #ebebeb, 0 0 10px #ebebeb, 0 0 21px #ebebeb, 0 0 42px #f50248, 0 0 82px #f50248, 0 0 92px #f50248, 0 0 102px #f50248, 0 0 151px #f50248;
+}
+
+.genreContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+select {
+  outline: 0;
+  width: 40%;
+  background-color: #ebebeb;
+  border: 2px solid #d6003d;
+  border-radius: 50px;
+  color: #2b2b2b;
+  padding: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+.actionMovies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+.actionMovies img {
+  width: 200px;
+  height: auto;
+  -webkit-box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0.2px 4px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+.actionMovies h3,
+.actionMovies p {
+  width: 200px;
+  padding: 0.5rem;
+  margin-bottom: 3px;
+  letter-spacing: 0.5px;
+}
+.actionMovies h3 {
+  height: 1.2rem;
+}
+.actionMovies p {
+  font-size: 0.8rem;
+  height: 300px;
+  overflow: scroll;
+}
+
+.popularPeople {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: auto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+.popularPeople img {
+  width: 200px;
+}
+.popularPeople p {
+  font-size: 1rem;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+footer {
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+footer h5 {
+  text-shadow: -1px -1px 0 #2b2b2b, 1px -1px 0 #2b2b2b, -1px 1px 0 #2b2b2b, 1px 1px 0 #2b2b2b;
+  font-size: 3rem;
+}
+footer h5:hover {
+  text-shadow: 0 0 7px #ebebeb, 0 0 10px #ebebeb, 0 0 21px #ebebeb, 0 0 42px #f50248, 0 0 82px #f50248, 0 0 92px #f50248, 0 0 102px #f50248, 0 0 151px #f50248;
+}
+footer p {
+  font-family: "Lato", sans-serif;
+}
+footer a {
+  color: #ebebeb;
+  text-decoration: none;
+}
+footer a:hover, footer a:focus {
+  text-shadow: 0 0 7px #ebebeb, 0 0 10px #ebebeb, 0 0 21px #ebebeb, 0 0 42px #f50248, 0 0 82px #f50248, 0 0 92px #f50248, 0 0 102px #f50248, 0 0 151px #f50248;
+  outline: 0;
+}
+
+@media (max-width: 375px) {
+  .wrapper {
+    max-width: 375px;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 200px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header input {
+    width: 100%;
+    display: inline-block;
+    height: 2rem;
+  }
+  header button {
+    border: none;
+    position: absolute;
+    right: 0;
+  }
+
+  .actionMovies {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: auto;
+  }
+  .actionMovies h3 {
+    font-size: 1rem;
+    background-color: #d6003d;
+    display: inline-block;
+    height: auto;
+    text-align: center;
+    width: 100%;
+  }
+  .actionMovies p {
+    margin: 0;
+    height: auto;
+    width: 100%;
+  }
+  .actionMovies img {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .popularPeople {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }

@@ -1,11 +1,11 @@
+
 const movieApp = {};
 movieApp.dropdown = document.querySelector("#dropdown");
 movieApp.form = document.querySelector("#form");
 movieApp.baseURL = "https://api.themoviedb.org/3";
 movieApp.genresURL = "https://api.themoviedb.org/3/genre/movie/list";
 movieApp.apiKey = "3a0641f8102192c59a0e2ba5b56c7347";
-movieApp.discoverURL =
-movieApp.baseURL + "/discover/movie?sort_by=popularity.desc&";
+movieApp.discoverURL = movieApp.baseURL + "/discover/movie?sort_by=popularity.desc&";
 movieApp.searchURL = movieApp.baseURL + "/search/movie?";
 movieApp.imageURL = "https://image.tmdb.org/t/p/w500";
 movieApp.peopleURL = "https://api.themoviedb.org/3/person/popular";
@@ -29,23 +29,23 @@ movieApp.getPeople = () => {
       movieApp.populatePeople(data.results);
     })
     .catch((error) => {
-      movieApp.displayError(error)
+      movieApp.displayError(error);
     });
 };
 
 movieApp.displayError = (error) => {
-if (error.message === "404") {
-  const bodyElement = document.querySelector("main");
-  const h1Element = document.createElement("h1");
-  h1Element.innerHTML = "No data was found. Please check the URL.";
-  bodyElement.appendChild(h1Element);
-} else {
-  const bodyElement = document.querySelector("main");
-  const h1Element = document.createElement("h1");
-  h1Element.innerHTML = "No data was found. Please check the URL.";
-  bodyElement.appendChild(h1Element);
-}
-}
+  if (error.message === "404") {
+    const bodyElement = document.querySelector("main");
+    const h1Element = document.createElement("h1");
+    h1Element.innerHTML = "No data was found. Please check the URL.";
+    bodyElement.appendChild(h1Element);
+  } else {
+    const bodyElement = document.querySelector("main");
+    const h1Element = document.createElement("h1");
+    h1Element.innerHTML = "No data was found. Please check the URL.";
+    bodyElement.appendChild(h1Element);
+  }
+};
 
 movieApp.populatePeople = (movieResultsPeople) => {
   movieResultsPeople.forEach((movieResult) => {
@@ -107,6 +107,7 @@ movieApp.searchMovie = () => {
     if (searchTerm) {
       movieApp.getSearch(searchTerm);
     } else {
+      document.querySelector("#actionMovies").innerHTML = "";
       movieApp.discoverData(search);
     }
   });
@@ -140,7 +141,8 @@ movieApp.discoverData = (query) => {
 
   url.search = new URLSearchParams({
     api_key: movieApp.apiKey,
-    with_genres: query
+
+    with_genres: query,
   });
 
   fetch(url)
@@ -160,16 +162,21 @@ movieApp.discoverData = (query) => {
 };
 
 
+
 movieApp.displayData = (movieResults) => {
   movieResults.forEach((movieResult) => {
     const title = document.createElement("h3");
     title.innerText = movieResult.title;
-
+    
     const overview = document.createElement("p");
     overview.innerText = movieResult.overview;
-
+    
     const image = document.createElement("img");
-    image.src = movieApp.imageURL + movieResult.poster_path;
+    if (movieResult.poster_path === null) {
+      image.src = movieApp.imageURL + movieResult.backdrop_path;
+    } else {
+      image.src = movieApp.imageURL + movieResult.poster_path;
+    }
     image.alt = movieResult.title;
 
     const div = document.createElement("div");
@@ -203,4 +210,8 @@ movieApp.init = () => {
   movieApp.searchMovie();
 };
 
+
 movieApp.init();
+
+
+

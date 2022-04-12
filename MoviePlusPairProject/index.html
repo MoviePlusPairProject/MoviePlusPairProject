@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoviePlus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville:ital@1&family=Lato&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/af4482c1be.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <header>
+        <h1><span class="clapperboard"><i class="fa-solid fa-clapperboard"></i> </span> Movie+</h1>
+        <form id="form">
+            <input type="text" placeholder="Search" id="search" class="search">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+
+        </form>
+    </header>
+    
+    <main>
+        <section class="discoverMovies">
+            <h2>Discover Movies</h2>
+            <div class="wrapper">
+                <div class="genreContent">
+                    <p>Select your favourite genre!</p>
+                    <select name="movie" id="dropdown">
+                    </select>
+                </div>
+            </div>
+
+            <div class="section action">
+                <div class="wrapper">
+                    <div class="actionMovies" id="actionMovies">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="people">
+            <h2>Actors & Artists</h2>
+            <div class="wrapper">
+                <div class="popularPeople" id="popularPeople">
+                    
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    
+    <footer>
+        <h5><span class="clapperboard"><i class="fa-solid fa-clapperboard"></i> </span> Movie+</h5>
+        <p>Data courtesy of <a href="https://www.themoviedb.org/documentation/api">The Movie Database</a></p>
+    </footer>
+
+    
+    <script src="script.js"></script>
+</body>
+</html>

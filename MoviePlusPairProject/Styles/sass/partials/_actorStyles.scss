@@ -1,0 +1,52 @@
+.popularPeople {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+        img {
+            width: 200px;
+        }
+        p {
+            font-size: 1rem;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .peoplePiece {
+            width: 20%;
+            margin-bottom: 5px;
+        }
+        h3 {
+            padding: 5px;
+            margin: 5px;
+            &:hover {
+                text-shadow: 0 0 7px $text,
+                    0 0 10px $text,
+                    0 0 21px $text,
+                    0 0 42px $glow,
+                    0 0 82px $glow,
+                    0 0 92px $glow,
+                    0 0 102px $glow,
+                    0 0 151px $glow;;
+            }
+        }
+    }
+
+    .getColor span.green{
+        background-color: lawngreen;
+        text-shadow: -1px -1px 0 #00911b, 1px -1px 0 #00911b, -1px 1px 0 #00911b, 1px 1px 0 #00911b;
+    }
+        
+    .getColor span.orange{
+        background-color: orange;
+        text-shadow: -1px -1px 0 #fa7719, 1px -1px 0 #fa7719, -1px 1px 0 #fa7719, 1px 1px 0 #fa7719;
+    }
+        
+    .getColor span.red{
+        background-color:  red;
+        text-shadow: -1px -1px 0 #c90202, 1px -1px 0 #c90202, -1px 1px 0 #c90202, 1px 1px 0 #c90202;
+    }

@@ -1,11 +1,11 @@
-
 const movieApp = {};
 movieApp.dropdown = document.querySelector("#dropdown");
 movieApp.form = document.querySelector("#form");
 movieApp.baseURL = "https://api.themoviedb.org/3";
 movieApp.genresURL = "https://api.themoviedb.org/3/genre/movie/list";
 movieApp.apiKey = "3a0641f8102192c59a0e2ba5b56c7347";
-movieApp.discoverURL = movieApp.baseURL + "/discover/movie?sort_by=popularity.desc&";
+movieApp.discoverURL =
+  movieApp.baseURL + "/discover/movie?sort_by=popularity.desc&";
 movieApp.searchURL = movieApp.baseURL + "/search/movie?";
 movieApp.imageURL = "https://image.tmdb.org/t/p/w500";
 movieApp.peopleURL = "https://api.themoviedb.org/3/person/popular";
@@ -141,7 +141,6 @@ movieApp.discoverData = (query) => {
 
   url.search = new URLSearchParams({
     api_key: movieApp.apiKey,
-
     with_genres: query,
   });
 
@@ -161,15 +160,14 @@ movieApp.discoverData = (query) => {
     });
 };
 
-
-
 movieApp.displayData = (movieResults) => {
   movieResults.forEach((movieResult) => {
-    const title = document.createElement("h3");
+    const title = document.createElement("h2");
     title.innerText = movieResult.title;
-    
+
     const overview = document.createElement("p");
     overview.innerText = movieResult.overview;
+
     
     const image = document.createElement("img");
     if (movieResult.poster_path === null) {
@@ -178,6 +176,12 @@ movieApp.displayData = (movieResults) => {
       image.src = movieApp.imageURL + movieResult.poster_path;
     }
     image.alt = movieResult.title;
+    
+    const rating = document.createElement("p");
+    rating.innerText = movieResult.vote_average;
+
+    const language = document.createElement("p");
+    language.innerText = movieResult.original_language;
 
     const div = document.createElement("div");
     div.classList.add("moviePiece");
@@ -185,6 +189,9 @@ movieApp.displayData = (movieResults) => {
     div.appendChild(title);
     div.appendChild(overview);
     div.appendChild(image);
+    div.appendChild(rating);
+    div.appendChild(language);
+
 
     document.querySelector("#actionMovies").append(div);
   });
@@ -210,8 +217,5 @@ movieApp.init = () => {
   movieApp.searchMovie();
 };
 
-
 movieApp.init();
-
-
 
